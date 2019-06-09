@@ -2,8 +2,12 @@ package com.tworks.ctracker.entities;
 
 import java.time.Duration;
 import java.time.LocalTime;
-import java.time.temporal.TemporalUnit;
 
+/**
+ * Enum type to represent Differnt sessions of conferences
+ * @author seshshan
+ *
+ */
 public enum Session {
 	MORNING(LocalTime.of(9,00),LocalTime.of(12,00)),
 	LUNCH(LocalTime.of(12,00),LocalTime.of(13,00)),

@@ -9,10 +9,8 @@
 	<packaging>jar</packaging>
 
 	<name>ConferenceTracker</name>
-	<url>http://maven.apache.org</url>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
@@ -41,6 +39,8 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			
+			<!-- TODO add plugin to package self executable jar -->
 		</plugins>
 	</build>
 </project>

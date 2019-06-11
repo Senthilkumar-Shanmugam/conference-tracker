@@ -1,6 +1,6 @@
 package com.tworks.ctracker.entities;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
@@ -11,19 +11,19 @@ import lombok.Data;
  * @author seshshan
  *
  */
+@Data
 public class Conference {
-	private List<Day> confDays;
+	private List<Day> confDays = new ArrayList<>();
+	
+	public int totalNoOfTalks() {
+		int c = 0;
+		for(Day day: getConfDays())
+			c+= day.getNoOfTalksFortheDay();
+		return c;
+	}
 	
 	
-	
-	//abstraction to represent a day
-	@Data
-	static class Day{
-	   private List<Track> tracks;
-	   private LocalDate confDate;
-	   
-	   
-	   
-	} 
+
 
 }
+

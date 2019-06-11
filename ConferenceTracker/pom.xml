@@ -39,8 +39,31 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
-			<!-- TODO add plugin to package self executable jar -->
+		
+		<plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-assembly-plugin</artifactId>
+	    <executions>
+	        <execution>
+	            <phase>package</phase>
+	            <goals>
+	                <goal>single</goal>
+	            </goals>
+	            <configuration>
+	                <archive>
+	                <manifest>
+	                    <mainClass>
+	                        com.tworks.ctracker.client.ConferenceManagementClient
+	                    </mainClass>
+	                </manifest>
+	                </archive>
+	                <descriptorRefs>
+	                    <descriptorRef>jar-with-dependencies</descriptorRef>
+	                </descriptorRefs>
+	            </configuration>
+	        </execution>
+	       </executions>
+     	</plugin>
 		</plugins>
 	</build>
 </project>

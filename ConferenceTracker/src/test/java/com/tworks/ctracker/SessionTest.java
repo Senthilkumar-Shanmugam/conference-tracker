@@ -7,9 +7,9 @@ import junit.framework.TestCase;
 public class SessionTest extends TestCase {
 
 	public void testSessions() {
-		System.out.println(Session.MORNING.toString());
+	/*	System.out.println(Session.MORNING.toString());
 		System.out.println(Session.LUNCH.toString());
 		System.out.println(Session.AFTERNOON.toString());
-	}
+	*/}
 	
 }

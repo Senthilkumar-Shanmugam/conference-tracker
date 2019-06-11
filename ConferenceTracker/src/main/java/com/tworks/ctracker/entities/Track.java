@@ -1,42 +1,29 @@
 package com.tworks.ctracker.entities;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Track {
+import lombok.Data;
 
-	private long minutesRemaining;
-	private Session session;
-	private List<Talk> talks = Collections.EMPTY_LIST;
+@Data
+public class Track {
+	private List<Session> sessions = new ArrayList<>();
 	
-	
-	public Track() {
+	public int getNoOfAssignedTalks() {
+		int c = 0;
 		
+		for(Session s : getSessions())
+		 c+= s.getScheduledTalks().size();
+		
+		return c;
 	}
-	public Track(Session session) {
-		this.session = session;
-		this.minutesRemaining = session.getSessionDuration();
-	}
-	
-	public List<Talk> getTalks() {
-		return talks;
-	}
-	
-	public void addTalkToTheTrack(Talk talk) {
-		talks.add(talk);
-		this.minutesRemaining -= talk.getTalkTime();
-	}
-	
-     //get talks by session
-	
-	//getalltalks
-	
-     public String toString() {
+
+	public String toString() {
     	 StringBuffer track = new StringBuffer();
     	 
     	 System.out.println("Track:");
     	 System.out.println("Session ");
     	 
     	 return track.toString();
-     }
+    }
 }

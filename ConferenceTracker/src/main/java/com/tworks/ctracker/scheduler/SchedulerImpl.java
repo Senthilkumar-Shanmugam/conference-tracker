@@ -119,12 +119,6 @@ public class SchedulerImpl implements Scheduler {
      		}
 			break;
 
-		/*case AFTERNOON: {
-			session.setSessionType(sType);
-			session.setRemainingMinutes(sType.getSessionDuration());
-		}
-			break;*/
-
 		case NETWORKING: {
 			session.setSessionType(sType);
 

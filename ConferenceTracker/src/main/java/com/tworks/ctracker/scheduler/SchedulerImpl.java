@@ -78,9 +78,11 @@ public class SchedulerImpl implements Scheduler {
 	
 	
 	private LocalTime getlastTalkEndTimeinAfterNoonSession(Session afSession) {
-		
 		//edge case
-		LocalTime time = afSession.getScheduledTalks().get(afSession.getScheduledTalks().size()-1).getEndTime();
+		LocalTime time = LocalTime.of(17,00);
+		
+		if(afSession.getScheduledTalks() != null && afSession.getScheduledTalks().size() > 0)
+		 time = afSession.getScheduledTalks().get(afSession.getScheduledTalks().size()-1).getEndTime();
 		return time;
 	}
 	

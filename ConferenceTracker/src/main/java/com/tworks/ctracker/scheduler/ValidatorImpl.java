@@ -15,6 +15,9 @@ public class ValidatorImpl implements Validator {
 		for(Talk talk:talks) {
 			if(talk.getTitle().matches(".*\\d+.*"))
 				throw new InValidTalkException("Talk "+ talk.getTitle() + " cannot have numbers in title");
+			
+			if(talk.getTalkTime() > SessionType.MORNING.getSessionDuration() || talk.getTalkTime() > SessionType.AFTERNOON.getSessionDuration())
+				throw new InValidTalkException("Talk time bigger for any entire session to hold");
 		}
 		return true;
 	}
